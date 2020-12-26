@@ -8,13 +8,13 @@ Of course that you can buy original Fingbox but that was not idea.
 
 I'm not paranoid about network security, but I wanted to know if some device joins my network. Idea is that I have some tool which will scan my local network each 30 minutes and see if any new, unknown, device is present and send notification to telegram with information about that device. 
 
-## Set up
+## Setup
 
 I created very simple bash script which I'm running on my Raspberry Pi 3. It can be also optimized but well, it's working :)
 
 ### What I'm doing there?
 
-Script runs Fing command line tool which returns CSV style table of all devices in defined network. Then for each row in that table I check if that device is present in ignoreddevices.txt file. If not then it checks knowndevices.txt file for that device and also checks if that device has still the same Ip address. This is useful if you didn't set up static Ip address, then you will get notification if some of your devices changed Ip. Also this is useful against attacks when someone fakes your known device mac address. 
+Script runs Fing command line tool which returns CSV style table of all devices in defined network. Then for each row in that table I check if that device is present in ignoreddevices.txt file. If not then it checks knowndevices.txt file for that device and also checks if that device has still the same Ip address. This is useful if you didn't setup static Ip address, then you will get notification if some of your devices changed Ip. Also this is useful against attacks when someone fakes your known device mac address. 
 
 Report for each device is published to MQTT. 
 
