@@ -1,0 +1,12 @@
+- alias: Network tracker
+  description: ''
+  id: 24b9f12c-b1b5-4899-b7f9-6078d6c8e775
+  mode: single
+  trigger:
+  - platform: mqtt
+    topic: networkTracker/alert
+  condition: []
+  action:
+  - service: notify.telegrambotme
+    data_template:
+      message: '🚨 NETWORK ALERT! 🚨 {{ trigger.payload }}'
